@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+</head>
+<body>
+        <form name = 'calc'>
+          <input type = 'number' name = 'A'> <p>
+          <input type = 'number' name = 'B'> <p>
+          <input type = 'button' value = '+' onClick = 'solve("+")'>
+          <input type = 'button' value = '-' onClick = 'solve("-")'>
+          <input type = 'button' value = '*' onClick = 'solve("*")'>
+          <input type = 'button' value = '/' onClick = 'solve("/")'>
+        </form>
+        
+        <p id = 'output'>
+        
+        <script>
+        function solve(t) { 
+        
+        let A = parseFloat(document.calc.A.value);
+        let B = parseFloat(document.calc.B.value);
+        let C = 0;
+        
+        if (t == '+') { C = A+B } else 
+          if (t == '-') { C = A-B } else
+            if (t == '*') { C = A*B } else { C = A/B };
+        
+        document.getElementById('output').innerHTML = C;
+        }
+        </script>
+    
+</body>
+</html>
